@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EMB HOTEL | Reserva Online</title>
+    <meta name="description" content="Reserva online del hotel EMB HOTEL conectada a Supabase en tiempo real." />
+    <meta name="theme-color" content="#111a22" />
+    <link rel="icon" href="assets/logo-emb.webp" type="image/webp" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="site-loader" id="siteLoader" role="status" aria-live="polite">
+      <div class="site-loader-card">
+        <img src="assets/logo-emb.webp" alt="" />
+        <span class="site-loader-ring" aria-hidden="true"></span>
+        <strong>EMB HOTEL</strong>
+        <small>Satipo · Junín · Perú</small>
+        <p>Preparando tu estadía</p>
+        <div class="site-loader-track" aria-hidden="true"><span></span></div>
+      </div>
+    </div>
+
+    <header class="topbar">
+      <div class="container nav">
+        <a class="brand" href="#inicio" aria-label="EMB HOTEL, inicio">
+          <img class="brand-logo" src="assets/logo-emb.webp" alt="" />
+          <div class="brand-name">
+            <strong>EMB</strong>
+            <small>HOTEL · SATIPO</small>
+          </div>
+        </a>
+        <nav class="menu" id="mainMenu" aria-label="Navegación principal">
+          <a href="#inicio"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1Z" /></svg><span class="nav-label">Inicio</span></a>
+          <a href="#habitaciones"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 19v-8h18v8M3 15h18M7 11V7a2 2 0 0 1 2-2h3a3 3 0 0 1 3 3v3" /><path d="M3 19v2m18-2v2" /></svg><span class="nav-label">Habitaciones</span></a>
+          <a href="#experiencia"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 21V5l8-2 8 2v16M9 21v-5h6v5M8 8h1m6 0h1m-8 4h1m6 0h1" /></svg><span class="nav-label">El hotel</span></a>
+          <a href="#galeria"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2" /><circle cx="8.5" cy="8.5" r="1.5" /><path d="m21 15-5-5L5 21" /></svg><span class="nav-label">Galería</span></a>
+          <a href="#contacto"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z" /><circle cx="12" cy="10" r="2.5" /></svg><span class="nav-label">Ubicación</span></a>
+        </nav>
+        <div class="nav-actions">
+          <span class="nav-location"><span aria-hidden="true">●</span> Satipo, Junín</span>
+          <a class="btn btn-primary nav-cta" href="#reserva">Reservar <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero" id="inicio">
+        <div class="hero-backdrop" aria-hidden="true">
+          <div class="hero-image is-active" data-slide="0"></div>
+          <div class="hero-image" data-slide="1"></div>
+          <div class="hero-image" data-slide="2"></div>
+          <div class="hero-image" data-slide="3"></div>
+          <div class="hero-image" data-slide="4"></div>
+        </div>
+        <div class="container hero-grid">
+          <div class="hero-copy">
+            <span class="eyebrow"><span class="eyebrow-line"></span><span id="heroEyebrow">Hospitalidad en Satipo</span></span>
+            <h1 id="heroTitle">Un lugar para sentirte bienvenido.</h1>
+            <p id="heroDescription">Un espacio cómodo para descansar durante tu visita a Satipo. Nuestro equipo está listo para ayudarte a organizar tu estadía.</p>
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="#reserva">Consultar disponibilidad <span aria-hidden="true">↗</span></a>
+              <a class="text-link" href="#habitaciones">Explorar habitaciones <span aria-hidden="true">↓</span></a>
+            </div>
+          </div>
+          <div class="hero-caption">
+            <span class="caption-rule"></span>
+            <span>Tu próxima pausa<br />comienza aquí.</span>
+          </div>
+          <div class="hero-counter" aria-label="Imágenes destacadas">
+            <button type="button" class="hero-dot is-active" data-slide-to="0" aria-label="Mostrar imagen 1"></button>
+            <button type="button" class="hero-dot" data-slide-to="1" aria-label="Mostrar imagen 2"></button>
+            <button type="button" class="hero-dot" data-slide-to="2" aria-label="Mostrar imagen 3"></button>
+            <button type="button" class="hero-dot" data-slide-to="3" aria-label="Mostrar imagen 4"></button>
+            <button type="button" class="hero-dot" data-slide-to="4" aria-label="Mostrar imagen 5"></button>
+          </div>
+        </div>
+      </section>
+
+      <section class="intro section" id="experiencia">
+        <div class="container intro-grid">
+          <div class="intro-copy reveal">
+            <span class="section-tag">EMB HOTEL · SATIPO</span>
+            <h2 id="introTitle">Descansa bien después de recorrer Satipo.</h2>
+            <p id="introDescription">EMB HOTEL es un punto tranquilo desde donde puedes disfrutar tu visita a la selva central. Consulta disponibilidad y elige una habitación que se adapte a tu viaje.</p>
+            <a class="text-link" href="#reserva">Planifica tu estadía <span aria-hidden="true">↗</span></a>
+          </div>
+          <div class="intro-photo reveal">
+            <img id="introImage" src="https://images.unsplash.com/photo-1611892440504-42a792e24d32?auto=format&fit=crop&w=1000&q=85" data-default-src="https://images.unsplash.com/photo-1611892440504-42a792e24d32?auto=format&fit=crop&w=1000&q=85" alt="Habitación luminosa preparada para una estadía confortable" loading="lazy" />
+            <span class="photo-note">EMB HOTEL <i>·</i> SATIPO</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="section rooms-section" id="habitaciones">
+        <div class="container">
+          <div class="section-head reveal">
+            <div>
+              <span class="section-tag">Tu espacio, tu descanso</span>
+              <h2>Habitaciones</h2>
+            </div>
+            <p>Encuentra el espacio ideal para tu visita.<br />El estado de las habitaciones se actualiza en vivo.</p>
+          </div>
+          <div id="roomsGrid" class="rooms-grid"></div>
+        </div>
+      </section>
+
+      <section class="experience-band">
+        <div class="container">
+          <div class="experience-heading reveal">
+            <span class="section-tag">Una estadía a tu medida</span>
+            <h2 id="servicesTitle">Pensado para una visita cómoda.</h2>
+            <p id="servicesDescription">Información clara, atención cercana y una habitación que se adapte a tu viaje.</p>
+          </div>
+          <div class="service-grid">
+            <article class="service-card reveal">
+              <span class="service-icon" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M5 11a16 16 0 0 1 22 0M9 15a10 10 0 0 1 14 0m-10 4a4 4 0 0 1 6 0M16 24h.01"/></svg></span>
+              <div><h3 id="benefitOneTitle">Descanso y privacidad</h3><p id="benefitOneText">Después de recorrer la ciudad, disfruta de un espacio para descansar.</p></div>
+              <span class="service-arrow" aria-hidden="true">↗</span>
+            </article>
+            <article class="service-card reveal">
+              <span class="service-icon" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M5 25V13h22v12M5 19h22M8 13V8h7a5 5 0 0 1 5 5M5 25v2m22-2v2"/></svg></span>
+              <div><h3 id="benefitTwoTitle">A tu manera</h3><p id="benefitTwoText">Elige una habitación que se ajuste a las necesidades de tu visita.</p></div>
+              <span class="service-arrow" aria-hidden="true">↗</span>
+            </article>
+            <article class="service-card reveal">
+              <span class="service-icon" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M25 13c0 7-9 15-9 15S7 20 7 13a9 9 0 1 1 18 0Z"/><circle cx="16" cy="13" r="3"/></svg></span>
+              <div><h3 id="benefitThreeTitle">En Satipo</h3><p id="benefitThreeText">Hospédate en Satipo y organiza desde aquí tu recorrido por la selva central.</p></div>
+              <span class="service-arrow" aria-hidden="true">↗</span>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="gallery-section section" id="galeria">
+        <div class="container">
+          <div class="section-head reveal">
+            <div><span class="section-tag">Una mirada al hotel</span><h2 id="galleryTitle">Conoce nuestros espacios.</h2></div>
+            <span class="gallery-location">SATIPO <i>·</i> PERÚ</span>
+          </div>
+          <div class="gallery-grid">
+            <figure class="gallery-item gallery-large reveal"><img id="galleryImage0" src="https://images.unsplash.com/photo-1611892440504-42a792e24d32?auto=format&fit=crop&w=1200&q=85" data-default-src="https://images.unsplash.com/photo-1611892440504-42a792e24d32?auto=format&fit=crop&w=1200&q=85" alt="Interior acogedor de una habitación" loading="lazy" /><figcaption>Descanso que se siente</figcaption></figure>
+            <figure class="gallery-item reveal"><img id="galleryImage1" src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=900&q=85" data-default-src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=900&q=85" alt="Detalle de una habitación de hotel" loading="lazy" /><figcaption>Detalles cuidados</figcaption></figure>
+            <figure class="gallery-item reveal"><img id="galleryImage2" src="https://images.unsplash.com/photo-1613977257363-707ba9348227?auto=format&fit=crop&w=900&q=85" data-default-src="https://images.unsplash.com/photo-1613977257363-707ba9348227?auto=format&fit=crop&w=900&q=85" alt="Espacio de descanso con luz natural" loading="lazy" /><figcaption>Un espacio para ti</figcaption></figure>
+            <figure class="gallery-item reveal"><img id="galleryImage3" src="https://images.unsplash.com/photo-1566665797739-1674de7a421a?auto=format&fit=crop&w=900&q=85" data-default-src="https://images.unsplash.com/photo-1566665797739-1674de7a421a?auto=format&fit=crop&w=900&q=85" alt="Habitación preparada para recibir huéspedes" loading="lazy" /><figcaption>Un lugar para descansar</figcaption></figure>
+            <figure class="gallery-item reveal"><img id="galleryImage4" src="https://images.unsplash.com/photo-1578683010236-d716f9a3f461?auto=format&fit=crop&w=900&q=85" data-default-src="https://images.unsplash.com/photo-1578683010236-d716f9a3f461?auto=format&fit=crop&w=900&q=85" alt="Detalle de un espacio cómodo" loading="lazy" /><figcaption>Detalles sencillos</figcaption></figure>
+            <figure class="gallery-item reveal"><img id="galleryImage5" src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=900&q=85" data-default-src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=900&q=85" alt="Espacio de hospedaje con luz natural" loading="lazy" /><figcaption>Un espacio para ti</figcaption></figure>
+          </div>
+        </div>
+      </section>
+
+      <section class="story-band">
+        <div class="container story-grid">
+          <div class="story-image reveal">
+            <img id="storyImage" src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=1100&q=85" data-default-src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=1100&q=85" alt="Vista tranquila de un espacio de hospedaje" loading="lazy" />
+          </div>
+          <div class="story-copy reveal">
+            <span class="section-tag" id="storyEyebrow">EMB HOTEL · SATIPO</span>
+            <div class="story-mark" aria-hidden="true">“</div>
+            <h2 id="storyTitle">Una estadía sencilla, cómoda y cercana.</h2>
+            <p id="storyDescription">Organiza tu visita a Satipo con un espacio propio para descansar y recuperar energía.</p>
+            <a class="text-link" href="#reserva">Conoce nuestras habitaciones <span aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section booking-section" id="reserva">
+        <div class="container booking-panel">
+          <div class="booking-copy reveal">
+            <span class="section-tag">Reserva directa</span>
+            <h2>Tu estadía<br /><em>empieza aquí.</em></h2>
+            <p>
+              Cuéntanos cuándo deseas venir. Verificaremos la disponibilidad y el equipo del hotel se pondrá en contacto contigo para confirmar.
+            </p>
+            <div class="stats">
+              <div>
+                <strong id="availableCount">0</strong>
+                <span>Disponibles ahora</span>
+              </div>
+              <span class="live-status"><i></i><span id="connectionStatus">Conectando…</span></span>
+            </div>
+          </div>
+
+          <form id="bookingForm" class="booking-form reveal">
+            <div class="form-heading"><span>01 / SOLICITUD</span><span>Sin compromiso</span></div>
+            <label>
+              Tipo o habitación
+              <select id="roomId" required></select>
+            </label>
+
+            <div class="two-cols">
+              <label>
+                Nombre y apellido
+                <input id="guestName" type="text" placeholder="Tu nombre" required />
+              </label>
+              <label>
+                Teléfono
+                <input id="phone" type="tel" placeholder="9xx xxx xxx" required />
+              </label>
+            </div>
+
+            <div class="two-cols">
+              <label>
+                Fecha de entrada
+                <input id="checkIn" type="date" required />
+              </label>
+              <label>
+                Fecha de salida
+                <input id="checkOut" type="date" required />
+              </label>
+            </div>
+
+            <label>
+              Correo (opcional)
+              <input id="email" type="email" placeholder="correo@ejemplo.com" />
+            </label>
+
+            <label>
+              Mensaje (opcional)
+              <textarea id="notes" rows="3" placeholder="Requerimientos especiales..."></textarea>
+            </label>
+
+            <p class="privacy-note">Al enviar, autorizas al hotel a contactarte para atender esta solicitud.</p>
+            <div id="statusMessage" class="status" aria-live="polite"></div>
+            <button type="submit" class="btn btn-primary btn-full"><span>Solicitar reserva</span><span aria-hidden="true">↗</span></button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer" id="contacto">
+      <p class="site-content-notice container" id="siteContentNotice" hidden></p>
+      <div class="container footer-grid">
+        <div>
+          <a class="brand mini" href="#inicio" aria-label="EMB HOTEL, inicio"><img class="brand-logo" src="assets/logo-emb.webp" alt="" /><div class="brand-name"><strong>EMB</strong><small>HOTEL</small></div></a>
+          <p>Hospitalidad cercana en Satipo, Junín.</p>
+        </div>
+        <div>
+          <h4>Explora</h4>
+          <a href="#habitaciones">Habitaciones</a>
+          <a href="#experiencia">El hotel</a>
+          <a href="#galeria">Galería</a>
+        </div>
+        <div>
+          <h4>Reservas</h4>
+          <p>Consulta disponibilidad directamente con nuestro equipo.</p>
+          <a class="footer-reserve" href="#reserva">Solicitar una reserva <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+      <div class="container footer-bottom"><span>© <span id="currentYear"></span> EMB HOTEL</span><span>SATIPO · JUNÍN · PERÚ</span><a href="#inicio">Volver arriba ↑</a></div>
+    </footer>
+
+    <dialog class="room-modal" id="roomModal" aria-labelledby="roomModalTitle">
+      <div class="room-modal-panel">
+        <div class="room-modal-image-wrap">
+          <img id="roomModalImage" alt="" />
+          <span id="roomModalNumber" class="room-modal-number"></span>
+        </div>
+        <div class="room-modal-content">
+          <button class="room-modal-close" id="roomModalClose" type="button" aria-label="Cerrar detalles">×</button>
+          <span class="room-modal-kicker">EMB HOTEL <i>·</i> SATIPO</span>
+          <span id="roomModalStatus" class="status-badge"></span>
+          <h2 id="roomModalTitle"></h2>
+          <p id="roomModalType" class="room-modal-type"></p>
+          <h3>DETALLES DE LA HABITACIÓN</h3>
+          <ul id="roomModalFeatures" class="room-modal-features"></ul>
+          <div class="room-modal-price-block"><span>Tarifa por noche</span><div class="room-modal-price" id="roomModalPrice"></div></div>
+          <button class="btn btn-primary room-modal-reserve" id="roomModalReserve" type="button">Consultar disponibilidad</button>
+        </div>
+      </div>
+    </dialog>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
